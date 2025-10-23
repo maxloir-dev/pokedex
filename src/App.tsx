@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import PokemonCard from './components1/PokemonCard';
+import NavBar from "./components1/NavBar";
 
 const pokemonList = [
   {
@@ -38,17 +39,7 @@ function App() {
 
   return (
 	<div>
-		<nav>
-			{pokemonList.map((pokemon) => (
-				<button
-				key={pokemon.name}
-				onClick={() => setPokemonName(pokemon.name)} 
-				>
-					{pokemon.name}
-					</button>
-			))}
-
-		</nav>
+		<NavBar setPokemonName={setPokemonName} pokemonList={pokemonList} />
 		<PokemonCard pokemon={pokemon} />
 	</div>
   );
