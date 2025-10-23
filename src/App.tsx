@@ -1,7 +1,9 @@
-import { useState } from "react";
 import "./App.css";
 import PokemonCard from './components1/PokemonCard';
 import NavBar from "./components1/NavBar";
+import { useState, useEffect } from "react";
+
+
 
 const pokemonList = [
   {
@@ -35,6 +37,9 @@ function App() {
 	const pokemon = pokemonList.find((pokemon) => pokemon.name === pokemonName);
 	if (pokemon == null){
 		throw new Error("Invalide pokemon name");
+     useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
 	}
 
   return (
