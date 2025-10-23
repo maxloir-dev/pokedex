@@ -34,14 +34,13 @@ const pokemonList = [
 
 function App() {
 	const [pokemonName, setPokemonName] = useState("bulbasaur");
+  useEffect(() => {
+    alert("Hello pokemon trainer :)");
+  }, []);
 	const pokemon = pokemonList.find((pokemon) => pokemon.name === pokemonName);
 	if (pokemon == null){
 		throw new Error("Invalide pokemon name");
-     useEffect(() => {
-    alert("hello pokemon trainer :)");
-  }, []);
 	}
-
   return (
 	<div>
 		<NavBar setPokemonName={setPokemonName} pokemonList={pokemonList} />
